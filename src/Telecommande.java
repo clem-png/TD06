@@ -34,7 +34,7 @@ public class Telecommande {
 
     }
 
-    public ArrayList<Lampes> getLampe(){
+    public ArrayList<Lampe> getLampe(){
         return lampes;
     }
 

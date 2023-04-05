@@ -19,7 +19,7 @@ public class TelecommandeTest {
     }
 
     /**
-     * test allumer une lampe eteinte
+     * test ajouter une lampe
      */
     @Test
     public void testAjout() {
@@ -32,5 +32,22 @@ public class TelecommandeTest {
 
         // verification
         assertTrue(t.getLampe().contains(l), "apres ajout, la lampe devrait etre dans la liste");
+    }
+
+    /**
+     * test allumer une lampe eteinte avec la telecommande
+     */
+    @Test
+    public void testAllumer() {
+        // preparation des donnees
+        Telecommande t = new Telecommande();
+        Lampe l = new Lampe("lampe1");
+
+        //methode testee
+        t.activerLampe(0);
+
+        // verification
+        boolean res = l.isAllume();
+        assertTrue(res, "apres allumer, la lampe devrait etre allumee");
     }
 }
