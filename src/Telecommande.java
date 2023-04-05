@@ -12,7 +12,12 @@ public class Telecommande {
     }
 
     public void activerLampe(int indiceLampe){
-        lampes.get(indiceLampe).allumer();
+        try {
+            lampes.get(indiceLampe).allumer();
+        }
+        catch (IndexOutOfBoundsException e ){
+            System.out.println("indice trop grand");
+        }
     }
 
     public void desactiverLampe(int indiceLampe){
