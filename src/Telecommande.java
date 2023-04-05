@@ -12,19 +12,26 @@ public class Telecommande {
     }
 
     public void activerLampe(int indiceLampe){
-        throw new Error("code non écrit");
+        lampes.get(indiceLampe).allumer();
     }
 
     public void desactiverLampe(int indiceLampe){
-        throw new Error("code non écrit");
+        lampes.get(indiceLampe).eteindre();
     }
 
     public void activerTout(){
-        throw new Error("code non écrit");
+        for (int i = 0; i <lampes.size(); i++){
+            lampes.get(i).allumer();
+        }
     }
 
     public String toString(){
-        throw new Error("code non écrit");
+        String aff ="";
+        for (int i = 0; i <lampes.size(); i++){
+            aff += lampes.get(i).toString();
+        }
+        return aff;
+
     }
 
 }
