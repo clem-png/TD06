@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 public class Telecommande {
 
@@ -25,4 +26,7 @@ public class Telecommande {
     public String toString(){
         throw new Error("code non écrit");
     }
+=======
+package PACKAGE_NAME;public class Telecommande {
+>>>>>>> 54c5dae9354c13fcc2c8faa744c5f8125c857404
 }
