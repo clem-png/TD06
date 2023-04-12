@@ -16,8 +16,8 @@ public class Main {
 		ajouter4Lampes(t);
 
 		// test d'activation
-		t.activerLampe(1);
-		t.activerLampe(3);
+		t.activerApp(1);
+		t.activerApp(3);
 		System.out.println(t);
 
 		// gestion du menu
@@ -49,12 +49,12 @@ public class Main {
 			// si la commande est +, on active
 			if (com.equals("+")) {
 				System.out.println("== activer "+choix+"==");
-				t.activerLampe(choix);
+				t.activerApp(choix);
 			}
 			// si la commande est - on descactive
 			else if (com.equals("-")) {
 				System.out.println("== desactiver "+choix+"==");
-				t.desactiverLampe(choix);
+				t.desactiverApp(choix);
 			}
 			// si la commande est exit, on arrete
 			else if (com.equals("exit")) {
@@ -80,16 +80,16 @@ public class Main {
 	 */
 	private static void ajouter4Lampes(Telecommande t) {
 		Lampe l1 = new Lampe("Lampe1");
-		t.ajouterLampe(l1);
+		t.ajouterApp(l1);
 
 		Lampe l2 = new Lampe("Lampe2");
-		t.ajouterLampe(l2);
+		t.ajouterApp(l2);
 
 		Lampe l3 = new Lampe("Lampe3");
-		t.ajouterLampe(l3);
+		t.ajouterApp(l3);
 
 		Lampe l4 = new Lampe("Lampe4");
-		t.ajouterLampe(l4);
+		t.ajouterApp(l4);
 	}
 
 }
