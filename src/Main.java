@@ -1,3 +1,5 @@
+import thermos.Thermostat;
+
 import java.util.Scanner;
 
 /**
@@ -21,11 +23,13 @@ public class Main {
 
 		Cheminee c1 = new Cheminee();
 		AdapterCheminee ac1 = new AdapterCheminee(c1);
-
+		Thermostat ther = new Thermostat();
+		AdapterThermostat at = new AdapterThermostat(ther);
 		Hifi h1 = new Hifi();
 
 
 		t.ajouterApp(ac1);
+		t.ajouterApp(at);
 		t.ajouterApp(l1);
 		t.ajouterApp(h1);
 		t.ajouterApp(l4);
@@ -35,7 +39,7 @@ public class Main {
 		t.activerApp(0);
 		t.activerApp(2);
 
-		//TelecommandeGraphique tg=new TelecommandeGraphique(t);
+		TelecommandeGraphique tg=new TelecommandeGraphique(t);
 
 
 
