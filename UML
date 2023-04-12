@@ -1,0 +1,70 @@
+@startuml
+
+
+class AdapterCheminee implements Appareil{
+    + AdapterCheminee(Cheminee)
+    + eteindre()
+    + allumer()
+    + toString() : String
+}
+
+class Cheminee{
+    - intensite : int
+    + Cheminee()
+    + changerIntensite(int)
+    + getLumiere() : int
+    + toString() : String
+}
+
+interface Appareil{
+    + allumer()
+    + eteindre()
+}
+
+class Hifi implements Appareil{
+    - son : int
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Lampe implements Appareil{
+    - nom : String
+    - allume : boolean
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Telecommande {
+    + Telecommande()
+    + ajouterAppareil(Appareil)
+    + activerAppareil(int)
+    + desactiverAppareil(int)
+    + activerTout()
+    + toString() : String
+}
+
+class TelecommandeGraphique{
+    - Telecommande tele
+    + TelecommandeGraphique(Telecommande)
+    + creationBoutons(int) : jPanel
+    + creationboutonOff(int) : JButton
+    + creationboutonOn(int) : JButton
+}
+
+class AdapterThermostat{
+    + AdapterThermostat(Thermostat)
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+Telecommande "1" --> "*" Appareil : - appareils
+AdapterCheminee "1" --> "1" Cheminee
+TelecommandeGraphique "1" --> "1" Telecommande : - tele
+
+
+
+
+@enduml
