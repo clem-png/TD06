@@ -53,17 +53,25 @@ class TelecommandeGraphique{
     + creationboutonOn(int) : JButton
 }
 
-class AdapterThermostat{
+class AdapterThermostat implements Appareil{
     + AdapterThermostat(Thermostat)
     + allumer()
     + eteindre()
     + toString() : String
 }
 
-Telecommande "1" --> "*" Appareil : - appareils
-AdapterCheminee "1" --> "1" Cheminee
-TelecommandeGraphique "1" --> "1" Telecommande : - tele
+class Thermostat {
+    - temperature : int
+    + Thermostat()
+    + monterTemperature()
+    + baisserTemperature()
+}
 
+
+Telecommande "1" --> "*" Appareil : - appareils
+AdapterCheminee "1" --> "1" Cheminee : -c cheminerControlleur
+TelecommandeGraphique "1" --> "1" Telecommande : - tele
+AdapterThermostat "1" --> "1" Thermostat : -t thermostatControlleur
 
 
 
