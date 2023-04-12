@@ -1,0 +1,10 @@
+1) En ajouter Hifi, on a ajouté 40 lignes (d'après git diff). On a ajouter des méthodes
+dans telecommandes ( ajouterHifi,retirerHifi, ...)
+
+2.4)Oui, on a effectué un copiers-coller. Si le code avait un bug, le bug se serai propagé
+Donc le code n'est pas facilement maintenable. 
+
+2.5) Les classes Lampe et Hifi pointent vers Télécommande. Donc si on modifie Lampe ou/et Hifi
+, il faut modifier la classes Télécommande. Et inversement.
+ 
+3.1)On peut utiliser une interface, Application. Lampe et Hifi implement l'interface.
