@@ -46,5 +46,8 @@ public class Telecommande {
 
     }
 
+    public int getNombre(){
+        return app.size();
+    }
 
 }
