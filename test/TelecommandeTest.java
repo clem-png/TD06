@@ -30,11 +30,12 @@ public class TelecommandeTest {
         Lampe l = new Lampe("lampe1");
 
         //methode testee
-        t.ajouterLampe(l);
+        t.ajouterApp(l);
+        Lampe a = (Lampe) t.getApp(0);
+
 
         // verification
-        assertTrue(t.getLampe().contains(l), "apres ajout, la lampe devrait etre dans la liste");
-        assertTrue((t.getLampe().get(0) == l), "apres ajout, la lampe devrait etre dans la liste");
+        assertTrue(t.getApp(0)==l, "apres ajout, la lampe devrait etre dans la liste");
     }
 
     /**
@@ -48,11 +49,12 @@ public class TelecommandeTest {
         Lampe l = new Lampe("lampe1");
 
         //methode testee
-        t.ajouterLampe(l);
-        t.activerLampe(0);
+        t.ajouterApp(l);
+        t.activerApp(0);
+        Lampe a = (Lampe) t.getApp(0);
 
         // verification
-        assertTrue(t.getLampe().get(0).isAllume(), "apres activerLampe, la lampe devrait etre allumee");
+        assertTrue(a.isAllume(), "apres activerLampe, la lampe devrait etre allumee");
     }
 
     @Test
@@ -62,12 +64,13 @@ public class TelecommandeTest {
         Lampe l = new Lampe("lampe1");
 
         //methode testee
-        t.ajouterLampe(l);
-        t.activerLampe(0);
-        t.desactiverLampe(0);
+        t.ajouterApp(l);
+        t.activerApp(0);
+        t.desactiverApp(0);
+        Lampe a = (Lampe) t.getApp(0);
 
         // verification
-        assertFalse(t.getLampe().get(0).isAllume(), "apres activerLampe, la lampe devrait etre allumee");
+        assertFalse(a.isAllume(), "apres activerLampe, la lampe devrait etre allumee");
     }
 
     @Test
@@ -78,13 +81,14 @@ public class TelecommandeTest {
         Lampe l2 = new Lampe("lampe2");
 
         //methode testee
-        t.ajouterLampe(l1);
-        t.ajouterLampe(l2);
+        t.ajouterApp(l1);
+        t.ajouterApp(l2);
         t.activerTout();
-
+        Lampe a = (Lampe) t.getApp(0);
+        Lampe b = (Lampe) t.getApp(1);
 
         // verification
-        assertTrue(t.getLampe().get(0).isAllume(), "apres activerLampe, la lampe devrait etre allumee");
-        assertTrue(t.getLampe().get(1).isAllume(), "apres activerLampe, la lampe devrait etre allumee");
+        assertTrue(a.isAllume(), "apres activerLampe, la lampe devrait etre allumee");
+        assertTrue(b.isAllume(), "apres activerLampe, la lampe devrait etre allumee");
     }
 }
