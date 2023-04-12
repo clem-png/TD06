@@ -29,6 +29,10 @@ public class Telecommande {
         }
     }
 
+    public Appareil getApp(int indiceApp){
+        return app.get(indiceApp);
+    }
+
     public String toString(){
         String aff ="lampe";
         for (int i = 0; i <app.size(); i++){

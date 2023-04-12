@@ -1,16 +1,17 @@
 public class AdapterCheminee implements Appareil {
 
-    public Cheminee c;
+    private Cheminee c;
     public AdapterCheminee(Cheminee che) {
         this.c = che;
     }
 
     public void allumer() {
-        c.intensite += 10;
+        int k = c.getLumiere();
+        c.changerIntensite(k + 10);
     }
 
     public void eteindre() {
-        c.intensite = 0;
+        c.changerIntensite(0);
     }
 
     public String toString() {
