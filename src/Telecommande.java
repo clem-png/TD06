@@ -34,11 +34,7 @@ public class Telecommande {
     }
 
     public String toString(){
-        String aff ="lampe";
-        for (int i = 0; i <app.size(); i++){
-            aff += app.get(i).toString() + "\n";
-        }
-        aff += "hifi \n";
+        String aff ="ensemble des appareils: \n";
         for (int i = 0; i <app.size(); i++){
             aff += app.get(i).toString() + "\n";
         }
