@@ -2,6 +2,8 @@ import appartement.AppareilAppart;
 import appartement.AppareilAppartThermostat;
 import thermos.Thermostat;
 
+import java.awt.*;
+
 
 public class AdapterAppartThermostat implements Appareil {
 
@@ -10,16 +12,14 @@ public class AdapterAppartThermostat implements Appareil {
         this.t = (AppareilAppartThermostat) t;
     }
 
+
+    @Override
     public void allumer() {
-        int k = c.getLumiere();
-        c.changerIntensite(k + 10);
+        t.augmenterTemperature();
     }
 
+    @Override
     public void eteindre() {
-        c.changerIntensite(0);
-    }
-
-    public String toString() {
-        return "Cheminee:" + c.intensite;
+        t.baisserTemperature();
     }
 }
