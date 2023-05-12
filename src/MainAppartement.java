@@ -12,19 +12,19 @@ public class MainAppartement {
         Appartement temoin=Appartement.getTemoin();
 
         AppareilAppart l=temoin.recupererAppareil("lampe", "Chambre1");
-        AdapterAppartLumiere aptLum=new AdapterAppartLumiere(l,"Chambre1");
+        AdapterAppartLumiere aptLum=new AdapterAppartLumiere((AppareilAppartLampe) l,"Chambre1");
         t.ajouterApp(aptLum);
 
         l=(AppareilAppartLampe)temoin.recupererAppareil("lampe", "Chambre2");
-        aptLum=new AdapterAppartLumiere(l,"Chambre2");
+        aptLum=new AdapterAppartLumiere((AppareilAppartLampe) l,"Chambre2");
         t.ajouterApp(aptLum);
 
         l=(AppareilAppartLampe)temoin.recupererAppareil("lampe", "Sejour");
-        aptLum=new AdapterAppartLumiere(l,"Sejour_1");
+        aptLum=new AdapterAppartLumiere((AppareilAppartLampe) l,"Sejour_1");
         t.ajouterApp(aptLum);
 
         l=(AppareilAppartLampe)temoin.recupererAppareil("lampe2", "Sejour");
-        aptLum=new AdapterAppartLumiere(l,"Sejour_2");
+        aptLum=new AdapterAppartLumiere((AppareilAppartLampe) l,"Sejour_2");
         t.ajouterApp(aptLum);
 
         l=temoin.recupererAppareil("thermostat", "Chambre1");
@@ -32,7 +32,7 @@ public class MainAppartement {
         t.ajouterApp(aptther);
 
         l=temoin.recupererAppareil("hifi", "Chambre2");
-        AdapterAppartHifi apthifi=new AdapterAppartHifi(l);
+        AdapterAppartHifi apthifi = new AdapterAppartHifi((AppareilAppartHifi) l);
         t.ajouterApp(apthifi);
 
         System.out.println(t);
